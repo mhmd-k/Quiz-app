@@ -88,13 +88,11 @@ function finish() {
         "src",
         "./images/GraveNegativeHarpseal-size_restricted.gif"
       );
-    endGameSection.querySelector("img").style.width = "300px";
   } else {
     endGameSection.querySelector("h2").innerHTML = `
         YOU LOST <br /> Your Score is: ${score}, Score 60 or higher to pass`;
     endGameSection
       .querySelector("img")
       .setAttribute("src", "./images/giphy.gif");
-    endGameSection.querySelector("img").style.width = "200px";
   }
 }

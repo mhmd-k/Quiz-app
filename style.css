@@ -125,6 +125,9 @@ input[type="radio"] + label {
   -o-transition: 0.2s;
 }
 /* end  */
+.end img {
+  width: 200px;
+}
 .end h2 {
   text-align: center;
 }
