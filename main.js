@@ -25,7 +25,6 @@ startBtn.addEventListener("click", () => {
       }
       submitAnswer(data[questionIndex].right_answer);
       questionIndex++;
-      console.log(score);
       if (questionIndex === 10) {
         finish();
         return;
@@ -52,14 +51,16 @@ function displayQuestion(q) {
     questionIndex + 1
   } out of 10`;
   for (let i in q.answers) {
-    let li = document.createElement("li");
-    let label = document.createElement("label");
-    label.innerText = q.answers[i];
+    const li = document.createElement("li");
+    const label = document.createElement("label");
     label.setAttribute("for", q.answers[i]);
-    li.innerHTML = `
-      <input type="radio" id="${q.answers[i]}" name="answer" value="${q.answers[i]}">
-      `;
-    li.append(label);
+    label.innerText = q.answers[i];
+    const radio = document.createElement("input");
+    radio.setAttribute("type", "radio");
+    radio.id = q.answers[i];
+    radio.name = "answer";
+    radio.value = q.answers[i];
+    li.append(radio, label);
     quizSection.querySelector("ul.answers").append(li);
   }
 }

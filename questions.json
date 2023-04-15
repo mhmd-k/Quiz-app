@@ -10,7 +10,7 @@
     "right_answer": "Hyper Text Markup Language"
   },
   {
-    "title": "Why We Use <br> Element",
+    "title": "Why We Use  <br>  Element?",
     "answers": [
       "To Make Text Bold",
       "To Make Text Italic",
@@ -20,7 +20,7 @@
     "right_answer": "To Add Breakline"
   },
   {
-    "title": "Is <img> Element Has Attribute href",
+    "title": "does  <img>  Element Has Attribute 'href'",
     "answers": [
       "Yes",
       "No Its For Anchor Tag <a>",
@@ -30,7 +30,7 @@
     "right_answer": "No Its For Anchor Tag <a>"
   },
   {
-    "title": "How Can We Make Element Text Bold",
+    "title": "How Can We Make Ehe Element's Text Bold?",
     "answers": [
       "Putting It Inside <b> Tag",
       "Putting It Inside <strong> Tag",
@@ -40,7 +40,7 @@
     "right_answer": "All Answers Is Right"
   },
   {
-    "title": "What Is The Right Hierarchy For Creating Part Of Page",
+    "title": "What Is The Right Hierarchy For Creating a Part Of a Page?",
     "answers": [
       "<h2> Then <p> Then <h1> Then <p> Then <h3> Then <p> Then <img>",
       "<h1> Then <p> Then <h3> Then <p> Then <h2> Then <p> Then <img>",
@@ -50,7 +50,7 @@
     "right_answer": "All Solutions Is Wrong"
   },
   {
-    "title": "How Can We Include External Page Inside Our HTML Page",
+    "title": "How Can We Include an External Page Inside Our HTML Page?",
     "answers": [
       "By Using Include in HTML",
       "By Using Load In HTML",
@@ -60,32 +60,32 @@
     "right_answer": "By Using iFrame Tag"
   },
   {
-    "title": "What Is The Tag That Not Exists in HTML",
+    "title": "Choose The Tag That Exists in HTML?",
     "answers": [
       "<object>",
       "<basefont>",
       "<abbr>",
-      "All Tags Is Exists in HTML"
+      "All Of These Tags Exists in HTML"
     ],
-    "right_answer": "All Tags Is Exists in HTML"
+    "right_answer": "All Of These Tags Exists in HTML"
   },
   {
-    "title": "How We Specify Document Type Of HTML5 Page",
+    "title": "How We Specify Document Type Of HTML5 Page?",
     "answers": [
-      "<DOCTYPE html>",
+      "<!DOCTYPE html>",
       "<DOCTYPE html5>",
       "<!DOCTYPE html5>",
-      "<!DOCTYPE html>"
+      "<DOCTYPE html>"
     ],
     "right_answer": "<!DOCTYPE html>"
   },
   {
-    "title": "What Is The Element Thats Not Exists in HTML5 Semantics",
+    "title": "What Is The Element That Does Not Exist in HTML5 Semantics?",
     "answers": ["<article>", "<section>", "<blockquote>", "<aside>"],
     "right_answer": "<blockquote>"
   },
   {
-    "title": "In HTML Can We Use This Way To Add Attributes",
+    "title": "In HTML What Way Can We Use To Add Attributes?",
     "answers": [
       "<div class='class-name'>",
       "<div class=class-name>",
