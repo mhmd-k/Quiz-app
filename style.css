@@ -75,7 +75,7 @@ section .container {
   margin: 0;
 }
 button {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 10px 30px;
   background-color: #2196f3;
   color: white;
@@ -94,6 +94,10 @@ button i {
   margin-left: 5px;
 }
 /* quiz */
+.quiz .top {
+  display: flex;
+  justify-content: space-between;
+}
 .quiz h4 {
   margin: 0;
   padding-top: 20px;

@@ -5,33 +5,32 @@ const nextBtn = document.getElementById("submit");
 const startBtn = document.getElementById("start");
 const restartBtn = document.getElementById("restart");
 
-let score = 0,
-  questionIndex = 0;
+let score = 0;
+let questionIndex = 0;
+let questions;
+let interval;
 
 startBtn.addEventListener("click", () => {
   startSection.classList.add("d-none");
   quizSection.classList.remove("d-none");
   getQuestions().then((data) => {
-    displayQuestion(data[questionIndex]);
-    nextBtn.addEventListener("click", () => {
-      let userHasChose = false;
-      document.querySelectorAll("input[type='radio']").forEach((e) => {
-        if (e.checked) {
-          userHasChose = true;
-        }
-      });
-      if (!userHasChose) {
-        return;
-      }
-      submitAnswer(data[questionIndex].right_answer);
-      questionIndex++;
-      if (questionIndex === 10) {
-        finish();
-        return;
-      }
-      displayQuestion(data[questionIndex]);
-    });
+    questions = data;
+    displayQuestion(questions[questionIndex]);
   });
+});
+
+nextBtn.addEventListener("click", () => {
+  let userHasChoose = false;
+  document.querySelectorAll("input[type='radio']").forEach((e) => {
+    if (e.checked) {
+      userHasChoose = true;
+    }
+  });
+  if (!userHasChoose) {
+    return;
+  }
+  clearInterval(interval);
+  submit(questions[questionIndex]);
 });
 
 restartBtn.addEventListener("click", () => {
@@ -63,9 +62,10 @@ function displayQuestion(q) {
     li.append(radio, label);
     quizSection.querySelector("ul.answers").append(li);
   }
+  timer();
 }
 
-function submitAnswer(correctAnswer) {
+function checkAnswer(correctAnswer) {
   let correct = false;
   quizSection.querySelectorAll("input[type='radio']").forEach((e) => {
     if (e.checked && correctAnswer === e.value) {
@@ -91,9 +91,33 @@ function finish() {
       );
   } else {
     endGameSection.querySelector("h2").innerHTML = `
-        YOU LOST <br /> Your Score is: ${score}, Score 60 or higher to pass`;
+        YOU LOST <br /> Your Score is: ${score} <br /> Score 60 or higher to pass`;
     endGameSection
       .querySelector("img")
       .setAttribute("src", "./images/giphy.gif");
   }
+}
+
+function submit(question) {
+  checkAnswer(question.right_answer);
+  questionIndex++;
+  if (questionIndex === 10) {
+    finish();
+  } else {
+    displayQuestion(questions[questionIndex]);
+  }
+}
+
+function timer() {
+  quizSection.querySelector("h4.timer").innerHTML = "00:30";
+  let seconds = 30;
+  interval = setInterval(() => {
+    seconds--;
+    let str = seconds < 10 ? `00:0${seconds}` : `00:${seconds}`;
+    quizSection.querySelector("h4.timer").innerHTML = str;
+    if (seconds === 0) {
+      clearInterval(interval);
+      submit(questions[questionIndex]);
+    }
+  }, 1000);
 }
